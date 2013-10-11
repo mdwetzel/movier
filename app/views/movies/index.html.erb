@@ -1,0 +1,19 @@
+<h1>Now Playing</h1>
+<p>(Sorted by MetaScore)</p>
+
+<% @in_theaters.each do |movie| %>
+<%= movie.title %>
+<br>
+Year:
+<%= movie.year %>
+<br>
+MetaScore: 
+<%= movie.metascore %>
+<br> 
+	
+<details>
+	<summary>Description</summary>
+	<%= movie.description %>
+</details>
+<br>
+<% end %>
