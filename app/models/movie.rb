@@ -19,8 +19,15 @@ class Movie < ActiveRecord::Base
       year = parts[1].gsub!(/[()]/, '')
       description = movie.css('.outline').text
       metascore = movie.css('.metascore strong').text
+      director = movie.css('.txt-block span span a').first.text
+      imdb_rating = movie.css('.rating-rating').text.to_d
+      imdb_url = movie.css('h4 a').first["href"]
+      thumbnail = movie.css('img').first["src"]
     
-      movies_formatted << Movie.new(title: parts[0], year: parts[1], description: description, metascore: metascore)
+      movies_formatted << Movie.new(title: parts[0], year: parts[1],
+                                    description: description, metascore: metascore,
+                                    director: director, imdb_rating: imdb_rating,
+                                    imdb_url: imdb_url, thumbnail: thumbnail)
     end  
     
     movies_formatted

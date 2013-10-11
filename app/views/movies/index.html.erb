@@ -1,19 +1,30 @@
+<div class="container">
+
 <h1>Now Playing</h1>
 <p>(Sorted by MetaScore)</p>
 
 <% @in_theaters.each do |movie| %>
-<%= movie.title %>
+
+<%= image_tag movie.thumbnail %>
+
+<h2><%= link_to movie.title, imdb_url(movie), target: :blank %></h2>
 <br>
 Year:
 <%= movie.year %>
 <br>
-MetaScore: 
-<%= movie.metascore %>
-<br> 
-	
-<details>
-	<summary>Description</summary>
-	<%= movie.description %>
-</details>
+Director:
+<%= movie.director %>
 <br>
-<% end %>
+MetaScore: 
+<%= metascore(movie) %>
+<br> 
+IMDB Rating
+<%= imdb_rating(movie) %>
+<br>
+<%= movie.description %>
+
+<div class="clearfix"></div>
+
+<% end %>	
+
+</div>

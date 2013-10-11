@@ -18,6 +18,37 @@ h1 {
 }
 
 body { 
-	background-color:#FF6400 !important;
-	color:#fff;
+	background-color:#2f0571 !important;
+}
+
+.container { 
+	background-color:#fff073 !important;
+}
+
+.awesome { 
+	color:darkgreen;
+	font-weight:bold;
+}
+
+.great { 
+	color:green;
+}
+
+.ok { 
+	color:yellow;
+}
+
+.poor { 
+	color:red;
+}
+
+.crap { 
+	color:brown;
+}
+
+img { 
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+	border:1px solid #000;
 }
